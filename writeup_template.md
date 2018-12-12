@@ -36,8 +36,6 @@ white pixels tracing out edges and black elsewhere.
 7. I modified the draw_lines function to convert the many individual short lines identified by the Hough transform into
 single left and right lines to map the full extent of the lanes. This was accomplishd via identifying the left and right lines by their slope and calculating a single slope and intercept to describe the line and extrapolating to the full length of the lane. I also excluded more horizontal lines with slopes within -0.3 to 0.3, which made the algorithm more robust for the challenge video.  
 
-![alt text][image1]
-
 
 ### 2. Identify potential shortcomings with your current pipeline
 
