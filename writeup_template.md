@@ -1,11 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
@@ -25,23 +19,22 @@ The goals / steps of this project are the following:
 
 The pipeline consisted of the following steps:
 
-    1. Apply a grayscale filter to the original image. This simplifies our algorithm by allowing us to only focus 
-    on bright/dark spots and in particular the gradient - the rate of change in brightness to detect the lane edges.
+1. Apply a grayscale filter to the original image. This simplifies our algorithm by allowing us to only focus 
+on bright/dark spots and in particular the gradient - the rate of change in brightness to detect the lane edges.
 
-    2. Apply a gaussian filter to suppress noise and spurious pixel values. 
+2. Apply a gaussian filter to suppress noise and spurious pixel values. 
 
-    3. Apply the canny algorithm with low and high threshold parameters to convert image into binary with 
-    white pixels tracing out edges and black elsewhere.
-    
-    4. Apply a region mask with specified vertices to only include edges in the general area of the lanes.
+3. Apply the canny algorithm with low and high threshold parameters to convert image into binary with 
+white pixels tracing out edges and black elsewhere.
 
-    5. Apply a Hough transform to convert pixel edges into lines.
+4. Apply a region mask with specified vertices to only include edges in the general area of the lanes.
 
-    6. Finally, draw the Hough lines onto the original image. 
+5. Apply a Hough transform to convert pixel edges into lines.
 
-    7. I modified the draw_lines function to convert the many individual short lines identified by the Hough transform into
-    single left and right lines to map the full extent of the lanes. This was accomplishd via identifying the left and right lines by their slope and calculating a single slope and intercept to describe the line and extrapolating to the 
-    full length of the lane. I also excluded more horizontal lines with slopes within -0.3 to 0.3, which made the algorithm more robust for the challenge video.  
+6. Finally, draw the Hough lines onto the original image. 
+
+7. I modified the draw_lines function to convert the many individual short lines identified by the Hough transform into
+single left and right lines to map the full extent of the lanes. This was accomplishd via identifying the left and right lines by their slope and calculating a single slope and intercept to describe the line and extrapolating to the full length of the lane. I also excluded more horizontal lines with slopes within -0.3 to 0.3, which made the algorithm more robust for the challenge video.  
 
 ![alt text][image1]
 
